@@ -1,0 +1,22 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "node-sass scss -o css",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
+    "gogo": "concurrently --kill-others \"npm run watch:sass\" \"live-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherdu/Portfolio.git"
+  },
+  "author": "Christopher Du",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christopherdu/Portfolio/issues"
+  },
+  "homepage": "https://github.com/christopherdu/Portfolio#readme"
+}

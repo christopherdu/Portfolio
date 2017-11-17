@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "node-sass scss -o css",
-    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
-    "gogo": "concurrently --kill-others \"npm run watch:sass\" \"live-server\""
+    "gogo": "concurrently --kill-others \"node-sass -w scss/style.scss -o css/style.css\" \"live-server\""
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
 $primary: #2795D3;
 $secondary: #151515;
+$font-bold: 'Lato:400', sans-serif;
+$font-light: 'Lato:300', sans-serif;
 
-p {
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.font-primary {
   color: $primary;
+}
+
+.font-bold {
+  font-family: $font-bold;
+}
+
+.font-light {
+  font-family: $font-light;
+}
+
+#landing {
+  background-color: $secondary;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  #name {
+    position: absolute;
+    width: 26.5%;
+    height: 60%;
+    //background-color: pink;
+    top: 70%;
+    left: 48%;
+    transform: translate(-45%, -60%);
+    line-height: 30px;
+
+    h1 {
+      opacity: 0;
+      font-size: 3.5rem;
+      animation: head-roll 1s ease-out 1s forwards;
+
+      span {
+        margin-left: 10px;
+        padding: 20px 20px;
+        color: $secondary;
+        background-color: $primary;
+      }
+    }
+
+    #job {
+      opacity: 0;
+      font-size: 2rem;
+      letter-spacing: 6px;
+      animation: head-roll 1s ease-out 1.5s forwards;
+    }
+    @keyframes head-roll {
+      0% {position: relative; top: -50px; opacity: 0};
+      100% {position: relative; top: 0px; opacity: 1};
+    }
+  }
+
+  #landing-info {
+    margin-top: 60px;
+    list-style: none;
+    text-align: left;
+    font-size: 1.4rem;
+    color: $secondary;
+    white-space: nowrap;
+
+    li {
+      position: relative;
+      margin-top: -1px;
+      height: auto;
+      background-color: $primary;
+      width: 0px;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        z-index: 99;
+        cursor: pointer;
+      }
+    }
+
+    #info-1 {
+      animation: info-anim 2s ease-out 2.3s forwards;
+    }
+
+    #info-2 {
+      animation: info-anim2 2s ease-out 2.9s forwards;
+    }
+
+    #info-3 {
+      animation: info-anim3 2s ease-out 3.3s forwards;
+    }
+
+    @keyframes info-anim {
+      0% {width: 0px};
+      100% {padding-left: 8px; width: 95px};
+    }
+
+    @keyframes info-anim2 {
+      0% {width: 0px};
+      100% {padding-left: 8px; width: 160px};
+    }
+
+    @keyframes info-anim3 {
+      0% {width: 0px};
+      100% {padding-left: 8px; width: 270px};
+    }
+  }
 }

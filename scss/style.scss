@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('http://weloveiconfonts.com/api/?family=entypo');
 
 $primary: #2795D3;
 $secondary: #151515;
@@ -16,6 +17,10 @@ html, body {
   color: $primary;
 }
 
+.font-secondary {
+  color: $secondary;
+}
+
 .font-bold {
   font-family: $font-bold;
 }
@@ -24,6 +29,42 @@ html, body {
   font-family: $font-light;
 }
 
+/* nav */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+};
+
+nav {
+  ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      margin-top: 15px;
+      margin-right: 25px;
+      font-size: 20px;
+
+      a {
+        font-size: 0px;
+        text-decoration: none;
+        opacity: 0;
+        animation: nav-in 1s ease-out 0.3s forwards;
+
+        @keyframes nav-in {
+          0% {color: $primary};
+          100% {font-size: 20px; color: $primary; opacity: 1;};
+        }
+      }
+    }
+  }
+}
+
+/* Landing page CSS */
 #landing {
   background-color: $secondary;
   width: 100%;
@@ -34,7 +75,6 @@ html, body {
     position: absolute;
     width: 26.5%;
     height: 60%;
-    //background-color: pink;
     top: 70%;
     left: 48%;
     transform: translate(-45%, -60%);
@@ -89,15 +129,15 @@ html, body {
     }
 
     #info-1 {
-      animation: info-anim 2s ease-out 2.3s forwards;
+      animation: info-anim 2s ease-out 1.8s forwards;
     }
 
     #info-2 {
-      animation: info-anim2 2s ease-out 2.9s forwards;
+      animation: info-anim2 2s ease-out 2.4s forwards;
     }
 
     #info-3 {
-      animation: info-anim3 2s ease-out 3.3s forwards;
+      animation: info-anim3 2s ease-out 2.8s forwards;
     }
 
     @keyframes info-anim {
@@ -115,4 +155,60 @@ html, body {
       100% {padding-left: 8px; width: 270px};
     }
   }
+
+  #landing-nav {
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    transform: translate(-45%, -80%);
+    list-style: none;
+    opacity: 0;
+    animation: fade-in 1s ease-in 3s forwards;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @keyframes fade-in {
+       100% {opacity: 1};
+    }
+
+    li {
+      display: inline-flex;
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: $primary;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        transition: all ease-in 0.25s;
+
+
+        &:hover {
+          background-color: $primary;
+          box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+/* About CSS */
+
+#about {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+}
+
+/* Projects CSS */
+
+#projects {
+  width: 100%;
+  height: 100%;
+  background-color: $secondary;
+  scroll-behavior: smooth;
 }

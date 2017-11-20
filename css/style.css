@@ -23,7 +23,7 @@ html, body {
   font-family: "Lato:300", sans-serif;
 }
 
-/* nav */
+/* sticky nav */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
@@ -33,7 +33,8 @@ nav ul {
   margin: 0;
   width: 100%;
   position: fixed;
-  list-style: none;
+  list-style-type: none;
+  display: -webkit-flex;
   display: flex;
   justify-content: flex-end;
 }
@@ -41,10 +42,9 @@ nav ul {
 nav ul li {
   margin-top: 15px;
   margin-right: 25px;
-  font-size: 20px;
 }
 
-nav ul li a {
+nav ul .nav-right {
   font-size: 0px;
   text-decoration: none;
   opacity: 0;
@@ -60,6 +60,24 @@ nav ul li a {
     color: #2795D3;
     opacity: 1;
   }
+}
+
+nav ul .go-home-li {
+  margin-right: auto;
+  padding-left: 20px;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+
+nav ul .go-home-li a {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #2795D3;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Landing page CSS */
@@ -83,7 +101,7 @@ nav ul li a {
 #landing #name h1 {
   opacity: 0;
   font-size: 3.5rem;
-  animation: head-roll 1s ease-out 1s forwards;
+  animation: head-roll 1s ease-out 0.5s forwards;
 }
 
 #landing #name h1 span {
@@ -97,7 +115,7 @@ nav ul li a {
   opacity: 0;
   font-size: 2rem;
   letter-spacing: 6px;
-  animation: head-roll 1s ease-out 1.5s forwards;
+  animation: head-roll 1s ease-out 1s forwards;
 }
 
 @keyframes head-roll {
@@ -138,15 +156,15 @@ nav ul li a {
 }
 
 #landing #landing-info #info-1 {
-  animation: info-anim 2s ease-out 1.8s forwards;
+  animation: info-anim 2s ease-out 1.3s forwards;
 }
 
 #landing #landing-info #info-2 {
-  animation: info-anim2 2s ease-out 2.4s forwards;
+  animation: info-anim2 2s ease-out 1.8s forwards;
 }
 
 #landing #landing-info #info-3 {
-  animation: info-anim3 2s ease-out 2.8s forwards;
+  animation: info-anim3 2s ease-out 2.1s forwards;
 }
 
 @keyframes info-anim {
@@ -155,7 +173,7 @@ nav ul li a {
   }
   100% {
     padding-left: 8px;
-    width: 95px;
+    width: 90px;
   }
 }
 
@@ -165,7 +183,7 @@ nav ul li a {
   }
   100% {
     padding-left: 8px;
-    width: 160px;
+    width: 150px;
   }
 }
 
@@ -175,7 +193,7 @@ nav ul li a {
   }
   100% {
     padding-left: 8px;
-    width: 270px;
+    width: 250px;
   }
 }
 
@@ -186,7 +204,7 @@ nav ul li a {
   transform: translate(-45%, -80%);
   list-style: none;
   opacity: 0;
-  animation: fade-in 1s ease-in 3s forwards;
+  animation: fade-in 1s ease-in 2.1s forwards;
 }
 
 #landing #landing-nav:hover {
@@ -211,7 +229,7 @@ nav ul li a {
   text-decoration: none;
   width: 100px;
   height: 40px;
-  transition: all ease-in 0.25s;
+  transition: all ease-in 0.15s;
 }
 
 #landing #landing-nav li a:hover {
@@ -220,11 +238,54 @@ nav ul li a {
   color: #151515;
 }
 
+#landing-after {
+  width: 100%;
+  height: 20%;
+  background-color: #151515;
+}
+
 /* About CSS */
 #about {
   width: 100%;
-  height: 100%;
-  background-color: pink;
+  height: 60%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: #2795D3;
+  padding: 0;
+  margin: 0;
+}
+
+#about #about-text {
+  font-size: 1.6rem;
+  align-self: center;
+  list-style-type: none;
+  white-space: nowrap;
+  margin-left: 100px;
+}
+
+#about #about-text li {
+  background-color: #151515;
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: auto;
+  padding-right: 15px;
+  padding-left: 10px;
+}
+
+#about #about-text .about-bold {
+  font-weight: bold;
+}
+
+#about #about-text .about-ul-span {
+  transition: all ease-in-out 0.3s;
+  padding-left: 5px;
+}
+
+#about #about-text .about-ul-span:hover {
+  cursor: pointer;
+  box-shadow: -1px 6px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* Projects CSS */

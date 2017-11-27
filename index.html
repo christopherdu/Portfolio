@@ -15,6 +15,19 @@
     <meta name="theme-color" content="#ffffff">
     <title>Christopher Du</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBRL9l87dCP8Uq5tqi4KNaedOuamAWSeqs",
+      authDomain: "portfolio-c3044.firebaseapp.com",
+      databaseURL: "https://portfolio-c3044.firebaseio.com",
+      projectId: "portfolio-c3044",
+      storageBucket: "portfolio-c3044.appspot.com",
+      messagingSenderId: "215712461043"
+    };
+    firebase.initializeApp(config);
+  </script>
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -26,7 +39,11 @@
   <body>
     <nav>
       <ul>
-        <li class="go-home-li"><a href="#landing" class="font-bold font-secondary">du</a></li>
+        <div class="left-nav">
+          <li><a href="#landing" class="font-bold font-secondary nav-left nav-du sticky-nav-active">du</a></li>
+          <li><a href="#sec-filler1" class="font-bold font-secondary entypo-user nav-left"></a></li>
+          <li><a href="#projects" class="font-bold font-secondary entypo-layout nav-left"></a></li>
+        </div>
         <li><a class="nav-right entypo-github" href="https://github.com/christopherdu"></a></li>
         <li><a class="nav-right entypo-twitter" href="https://twitter.com/chrlsdv"></a></li>
         <li><a class="nav-right entypo-linkedin" href="https://www.linkedin.com/in/christopher-du-4b4619119/"></a></li>
@@ -42,12 +59,14 @@
           <li id="info-3">me@christopherdu.com </li>
         </ul>
         <ul id="landing-nav">
-          <li class="font-primary font-bold "><a href="#landing-after">About</a></li>
-          <li class="font-primary font-bold"><a href="#projects">Projects</a></li>
+          <li class="font-primary font-bold "><a href="#sec-filler1" class="land-nav-proj">About</a></li>
+          <li class="font-primary font-bold"><a href="#projects" class="land-nav-proj">Projects</a></li>
         </ul>
       </section>
     </section>
-    <section id="landing-after"></section>
+    <section id="sec-filler1" class="sec-filler">
+      <div id="aboutT"></div>
+    </section>
     <section id="about">
       <ul id="about-text" class="font-primary font-bold">
         <li>Hi, I'm <span class="about-bold">Christopher Du</span></li>

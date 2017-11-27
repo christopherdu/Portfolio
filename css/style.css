@@ -23,6 +23,34 @@ html, body {
   font-family: "Lato:300", sans-serif;
 }
 
+.land-nav-proj:before {
+  content: '';
+  position: absolute;
+  z-index: -99;
+  width: 100px;
+  height: 40px;
+  background-color: #2795D3;
+  transform: scaleX(0);
+  transform-origin: 0% 100%;
+  transition: transform ease-out 0.3s;
+}
+
+.land-nav-proj:hover:before {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transform: scaleX(1);
+  color: #151515;
+}
+
+.sticky-nav-active {
+  animation: cur-active 1s ease-in-out forwards;
+}
+
+@keyframes cur-active {
+  100% {
+    padding-bottom: 10px;
+  }
+}
+
 /* sticky nav */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -45,47 +73,51 @@ nav ul li {
 }
 
 nav ul .nav-right {
-  font-size: 0px;
+  font-size: 20px;
   text-decoration: none;
+  color: #2795D3;
   opacity: 0;
-  animation: nav-in 1s ease-out 0.3s forwards;
+  transition: color ease-in-out 0.02s;
 }
 
-@keyframes nav-in {
-  0% {
-    color: #2795D3;
-  }
-  100% {
-    font-size: 20px;
-    color: #2795D3;
-    opacity: 1;
-  }
-}
-
-nav ul .go-home-li {
+nav ul .left-nav {
   margin-right: auto;
   padding-left: 20px;
   opacity: 0;
-  transition: all ease-in-out 0.5s;
 }
 
-nav ul .go-home-li a {
+nav ul .left-nav li:nth-of-type(2) {
+  margin-left: 50px;
+}
+
+nav ul .left-nav li:nth-of-type(3) {
+  margin-left: 100px;
+}
+
+nav ul .left-nav a {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #2795D3;
   text-decoration: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: all ease-in-out 0.02s;
+  transition: transform ease-in-out 0.4s;
+}
+
+nav ul .left-nav a:hover {
+  transform: scale(1.1);
 }
 
 /* Landing page CSS */
 #landing {
+  position: relative;
   background-color: #151515;
   width: 100%;
   height: 100%;
   text-align: center;
+  display: flex;
 }
 
 #landing #name {
@@ -152,6 +184,7 @@ nav ul .go-home-li a {
 #landing #landing-info li:hover {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 99;
+  color: #151515;
   cursor: pointer;
 }
 
@@ -199,16 +232,13 @@ nav ul .go-home-li a {
 
 #landing #landing-nav {
   position: absolute;
+  display: flex;
+  left: 40%;
   top: 90%;
-  left: 45%;
-  transform: translate(-45%, -80%);
+  transform: translate(-40%, -90%);
   list-style: none;
   opacity: 0;
   animation: fade-in 1s ease-in 2.1s forwards;
-}
-
-#landing #landing-nav:hover {
-  cursor: pointer;
 }
 
 @keyframes fade-in {
@@ -218,7 +248,7 @@ nav ul .go-home-li a {
 }
 
 #landing #landing-nav li {
-  display: inline-flex;
+  display: flex;
 }
 
 #landing #landing-nav li a {
@@ -229,31 +259,39 @@ nav ul .go-home-li a {
   text-decoration: none;
   width: 100px;
   height: 40px;
-  transition: all ease-in 0.15s;
+  transition: color ease-in 0.3s;
 }
 
 #landing #landing-nav li a:hover {
-  background-color: #2795D3;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   color: #151515;
 }
 
-#landing-after {
+.sec-filler {
+  position: relative;
+  z-index: -10;
   width: 100%;
-  height: 20%;
+  height: 15%;
   background-color: #151515;
+  padding: 0;
+  margin: 0;
+}
+
+.sec-filler #aboutT {
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  bottom: 0px;
 }
 
 /* About CSS */
 #about {
+  z-index: -6;
   width: 100%;
   height: 60%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
   background-color: #2795D3;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 #about #about-text {
@@ -261,12 +299,11 @@ nav ul .go-home-li a {
   align-self: center;
   list-style-type: none;
   white-space: nowrap;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 #about #about-text li {
   background-color: #151515;
-  display: inline-block;
   float: left;
   clear: left;
   width: auto;
@@ -285,7 +322,8 @@ nav ul .go-home-li a {
 
 #about #about-text .about-ul-span:hover {
   cursor: pointer;
-  box-shadow: -1px 6px 10px rgba(0, 0, 0, 0.8);
+  color: #151515;
+  background-color: #2795D3;
 }
 
 /* Projects CSS */
@@ -293,5 +331,4 @@ nav ul .go-home-li a {
   width: 100%;
   height: 100%;
   background-color: #151515;
-  scroll-behavior: smooth;
 }

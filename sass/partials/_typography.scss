@@ -1,3 +1,8 @@
+// Setting base typography styling
+body {
+    font-size: 16px;
+}
+
 // Landiing page typography
 .landing {
     font-size: 1em;
@@ -37,12 +42,12 @@
         font-weight: $semi-bold;
 
         &__header {
-            font-size: 3.5em;
+            font-size: 3.5rem;
         }
 
         &__body {
             font-weight: $regular;
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin: 0px;
         }
     }

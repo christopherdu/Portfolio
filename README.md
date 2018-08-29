@@ -1,5 +1,4 @@
-# Persona portfolio for Christopher Du
-# @ christopherdu.com
+# Persona portfolio for Christopher Du @ christopherdu.com
 
 ## Intro
 This repository was created last year as a way to keep my previous iteration of my peronsal portfolio organized and centralized.

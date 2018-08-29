@@ -49,12 +49,14 @@ body {
     &__top__left {
         display: flex; 
         justify-content: flex-end;
+        align-items: center;
 
         &__img {
             background-color: $logo-color;
             height: 250px;
             width: 250px;
-            border-radius: 500%;   
+            border-radius: 500%;
+            margin-right: 10%;   
         }
     }
 
@@ -80,7 +82,7 @@ body {
         margin-left: 30px;
 
         &__body {
-            margin-bottom: 25px;
+            margin-bottom: 100px;
         }
     }
 }
@@ -99,6 +101,15 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        &__email {
+            background-color: $base-color;
+            width: max-content;
+            height: auto;
+            padding: 15px;
+            margin-top: 20px;
+            margin-right: -40px;
+        }
     }
 
     &__social {

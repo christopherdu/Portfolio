@@ -9,10 +9,10 @@
             font-weight: $semi-bold;
 
             a {
+                color: $sec-color;
                 text-decoration: none;
                 position: relative;
                 z-index: 1;
-                color: $sec-color;
                 font-size: 1.9rem;
                 margin: 0px 30px 0px 30px;
             }
@@ -84,30 +84,30 @@
     &__bot__left {
         
         &__header {
-            font-family: $base-font-family;
-            font-size: 5rem;
-            font-weight: $semi-bold;
             color: $logo-color;
+            font-family: $base-font-family;
+            font-size: 4rem;
+            font-weight: $semi-bold;
 
             &__sub {
-                font-size: 2.4rem;
+                font-size: 2rem;
                 font-weight: $medium;
             }
         }
 
         &__body {
-            font-family: $sec-font-family;
             color: $sec-color;
-            font-size: 1.8rem;
+            font-family: $sec-font-family;
+            font-size: 1.6rem;
             font-weight: $medium;
         }
     }   
 
     // Right paragraph
     &__bot__right {
-        font-family: $sec-font-family;
         color: $sec-color;
-        font-size: 1.8rem;
+        font-family: $sec-font-family;
+        font-size: 1.6rem;
         font-weight: $medium;
     }
 }
@@ -123,6 +123,14 @@
             font-family: $base-font-family;
             font-weight: $semi-bold;
             font-size: 3rem;
+        }
+
+        &__email {
+            color: $logo-color;
+            font-family: $base-font-family;
+            font-weight: $medium;
+            font-size: 2rem;
+
         }
     }
 

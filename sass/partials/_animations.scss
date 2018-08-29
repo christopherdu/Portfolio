@@ -1,0 +1,27 @@
+// Landing page animations
+
+.landing {
+
+    .nav__container__link:hover:before {
+        border-bottom: 4px solid $logo-color;
+    }
+
+    .nav__container__link:before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        bottom: -5px;
+        height: 100%;
+        width: 120%;
+        transition: border-bottom 0.1s ease-in-out;
+    }
+
+    .social__link {
+        transition: color 0.1s ease-in-out;
+
+        &:hover {
+            color: $logo-color;
+            cursor: pointer;
+        }
+    }
+}

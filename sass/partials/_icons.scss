@@ -1,0 +1,50 @@
+// Landing page icon styling 
+.landing {
+
+
+    &__logo {
+
+
+        &__social {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: $sec-color;
+
+            a {
+                color: $sec-color
+            }
+            
+            i {
+                margin: 0px 15px 0px 15px;
+            }
+        }
+    }
+}
+
+// About page icons
+.about {
+    &__top__right__li__icon {
+        color: $logo-color;
+        font-size: 2.5rem;
+        margin: 20px;
+        text-align: center;
+    }
+}
+
+// Contact page icons
+.contact {
+
+    &__social {
+
+        &__icons {
+            margin-top: 50px;
+            
+            &__link {
+                text-decoration: none;
+                color: $base-color;
+                font-size: 3rem;
+                margin: 30px;
+            }
+        }
+    }
+}

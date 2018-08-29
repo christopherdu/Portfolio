@@ -1,0 +1,139 @@
+// Landiing page typography
+.landing {
+    font-size: 1em;
+
+    // Navigator on landing page
+    &__nav {
+        &__container {
+            font-family: $base-font-family;
+            font-weight: $semi-bold;
+
+            a {
+                text-decoration: none;
+                position: relative;
+                z-index: 1;
+                color: $sec-color;
+                font-size: 1.9rem;
+                margin: 0px 30px 0px 30px;
+            }
+        }
+    }
+
+    // Logo and social icons on landing page
+    &__logo {
+        font-family: $base-font-family;
+        font-weight: $semi-bold;
+        font-size: 5.5rem;
+
+
+        &__du {
+            margin-bottom: 20px;
+        }
+    }
+
+    // Information section of landing page
+    &__info {
+        font-family: $base-font-family;
+        font-weight: $semi-bold;
+
+        &__header {
+            font-size: 3.5em;
+        }
+
+        &__body {
+            font-weight: $regular;
+            font-size: 1.5rem;
+            margin: 0px;
+        }
+    }
+
+    // Scroll down indicator on landing page
+    &__scroll {
+        color: $logo-color;
+        font-family: $base-font-family;
+        font-weight: $regular;
+        font-size: 1.5rem;
+    }
+}
+
+// About page typography
+.about {
+    &__top__left {
+
+        &__img {
+            color: $base-color;
+            font-size: 5rem;
+        }
+    }
+
+    // Bullet point list
+    &__top__right {
+
+        // li's text styling
+        &__li__text {
+            color: $sec-color;
+            font-family: $base-font-family;
+            font-weight: $medium;
+            font-size: 2rem;
+            margin-left: 20px;
+            text-align: left;
+        }
+    }
+
+    // Left paragraph and header + subheader
+    &__bot__left {
+        
+        &__header {
+            font-family: $base-font-family;
+            font-size: 5rem;
+            font-weight: $semi-bold;
+            color: $logo-color;
+
+            &__sub {
+                font-size: 2.4rem;
+                font-weight: $medium;
+            }
+        }
+
+        &__body {
+            font-family: $sec-font-family;
+            color: $sec-color;
+            font-size: 1.8rem;
+            font-weight: $medium;
+        }
+    }   
+
+    // Right paragraph
+    &__bot__right {
+        font-family: $sec-font-family;
+        color: $sec-color;
+        font-size: 1.8rem;
+        font-weight: $medium;
+    }
+}
+
+// Contact page typography
+.contact {
+    
+    // Contact form ******TODO******
+    &__me {
+
+        &__header {
+            color: $base-color;
+            font-family: $base-font-family;
+            font-weight: $semi-bold;
+            font-size: 3rem;
+        }
+    }
+
+    // Social links 
+    &__social {
+
+        &__header {
+            color: $base-color;
+            font-family: $base-font-family;
+            font-weight: $regular;
+            font-size: 2rem;
+        }
+    }
+}   

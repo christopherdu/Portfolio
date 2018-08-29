@@ -1,89 +1,117 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My name is Christopher Du, I'm a Toronto based web developer that focuses on front-end development. I have a passion for minimalist design and emerging front-end web development technologies.">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <title>Christopher Du</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBRL9l87dCP8Uq5tqi4KNaedOuamAWSeqs",
-      authDomain: "portfolio-c3044.firebaseapp.com",
-      databaseURL: "https://portfolio-c3044.firebaseio.com",
-      projectId: "portfolio-c3044",
-      storageBucket: "portfolio-c3044.appspot.com",
-      messagingSenderId: "215712461043"
-    };
-    firebase.initializeApp(config);
-  </script>
-    <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous">
-		</script>
-    <script src="scripts/script.js"></script>
-  </head>
+    <head>
 
-  <body>
-    <nav>
-      <ul>
-        <div class="left-nav">
-          <li><a href="#landing" class="font-bold font-secondary nav-left nav-du sticky-nav-active">du</a></li>
-          <li><a href="#sec-filler1" class="font-bold font-secondary entypo-user nav-left"></a></li>
-          <li><a href="#projects" class="font-bold font-secondary entypo-layout nav-left"></a></li>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Christopher Du | Web Developer</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+        <div class="wrapper">
+            <div class='landing'>
+                <div class="landing__nav">
+                    <nav class='landing__nav__container'>
+                        <a class='nav__container__link' href="#">About</a>   
+                        <a class='nav__container__link' href="#">Projects</a>  
+                        <a class='nav__container__link' href="#">Contact</a>   
+                    </nav>
+                </div>
+                <div class="landing__logo">
+                    <div class="landing__logo__social">
+                        <a class="social__link" href="https://github.com/christopherdu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="social__link" href="https://twitter.com/christophvrdu" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="social__link" href="https://codepen.io/cdu11/#" target="_blank"><i class="fab fa-codepen"></i></a>
+                        <a class="social__link"href="https://www.linkedin.com/in/christopher-du-4b4619119/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="landing__logo__du">Du</div>
+                </div>
+                <div class="landing__info">
+                    <header 
+                    class="landing__info__header">
+                        Hi,<br>I'm Christopher Du 
+                    </header>
+                    <p class="landing__info__body">
+                        I'm a front-end developer based in <br> Toronto
+                    </p>
+                </div>
+                <div class="landing__scroll">Scroll</div>
+            </div>
+            <div class='about'>
+                <div class="about__top__left">
+                    <div class="about__top__left__img">:)</div>
+                </div>
+                <div class="about__top__right">
+                    <ul class="about__top__right__list">
+                        <li class="about__top__right__li">
+                            <i class="fas fa-user about__top__right__li__icon"></i>
+                            <span class="about__top__right__li__text">Christopher Du</span>
+                        </li>
+                        <li class="about__top__right__li">
+                            <i class="fas fa-calendar-alt about__top__right__li__icon"></i>
+                            <span class="about__top__right__li__text">October 6th 1996</span>
+                        </li>
+                        <li class="about__top__right__li">
+                            <i class="fas fa-briefcase about__top__right__li__icon"></i>
+                            <span class="about__top__right__li__text">Front-end developer</span>
+                        </li>
+                        <li class="about__top__right__li">
+                            <i class="fas fa-graduation-cap about__top__right__li__icon"></i>
+                            <span class="about__top__right__li__text">Senece College</span>
+                        </li>
+                        <li class="about__top__right__li">
+                            <i class="fas fa-map-marker-alt about__top__right__li__icon"></i>
+                            <span class="about__top__right__li__text">Toronto</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about__bot__left">
+                    <header class="about__bot__left__header">
+                        i'm Christopher Du
+                        <div class="about__bot__left__header__sub">
+                            a front-end developer based in Toronto.
+                        </div>
+                    </header>
+                    <div class="about__bot__left__body">
+                        <br>
+                        I went to Seneca College to study digital media where I found my passion for web development.
+                        I discovered front-end development was what I wanted to pursue through the unique experience offered by it that other programming languages don't offer.
+                        The mixture of creativity and problem solving unique to front-end development is something that I thoroughly enjoy engaging with.
+                    </div>
+                </div>
+                <div class="about__bot__right">
+                    <div class="about__bot__right__body">
+                        Outside of web development I would consider myself to be an introverted person, usually engaging in hobbies that allow for some alone time.
+                        Some of these hobbies include playing video games, watching and analyzing film. listening to music, ane reading fiction. 
+                    </div>
+                </div>
+            </div>
+            <div class='projects'></div>
+            <div class='contact'>
+                <div class="contact__me">
+                    <header class="contact__me__header">Want to<br>work together?
+                    </header>
+                </div>
+                <div class="contact__social">
+                    <header class="contact__social__header">You can also find me here...</header>
+                    <div class="contact__social__icons">
+                        <a class="contact__social__icons__link"><i class="fab fa-discord"></i></a>
+                        <a class="contact__social__icons__link" href="https://github.com/christopherdu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="contact__social__icons__link" href="https://twitter.com/christophvrdu" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="contact__social__icons__link" href="https://codepen.io/cdu11/#" target="_blank"><i class="fab fa-codepen"></i></a>
+                        <a class="contact__social__icons__link" href="https://www.linkedin.com/in/christopher-du-4b4619119/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <li><a class="nav-right entypo-github" href="https://github.com/christopherdu"></a></li>
-        <li><a class="nav-right entypo-twitter" href="https://twitter.com/chrlsdv"></a></li>
-        <li><a class="nav-right entypo-linkedin" href="https://www.linkedin.com/in/christopher-du-4b4619119/"></a></li>
-      </ul>
-    </nav>
-    <section id="landing">
-      <section id="name">
-        <h1 id="landing-name" class="font-primary font-bold">Christopher<span>du</span></h1>
-        <div id="job" class="font-primary font-light">webdev</div>
-        <ul id="landing-info" class="font-secondary font-bold">
-          <li id="info-1">Toronto</li>
-          <li id="info-2">647 609 3491 </li>
-          <li id="info-3">me@christopherdu.com </li>
-        </ul>
-        <ul id="landing-nav">
-          <li class="font-primary font-bold "><a href="#sec-filler1" class="land-nav-proj">About</a></li>
-          <li class="font-primary font-bold"><a href="#projects" class="land-nav-proj">Projects</a></li>
-        </ul>
-      </section>
-    </section>
-    <section id="sec-filler1" class="sec-filler">
-      <div id="aboutT"></div>
-    </section>
-    <section id="about">
-      <ul id="about-text" class="font-primary font-bold">
-        <li>Hi, I'm <span class="about-bold">Christopher Du</span></li>
-        <li>I studied <span class="about-bold">Digital Media</span> at <span class="about-bold">Seneca College</span> </li>
-        <li>I'm an aspiring web developer focusing on the <span class="about-bold">front-end</span> based in <span class="about-bold">Toronto</span> </li>
-        <li>I love the creative and technical aspects that front-end development mixes together</li>
-        <li>Aside from web development</li>
-        <li>I hold a passion for
-          <span class="about-bold about-ul-span">gaming, </span>
-          <span class="about-bold about-ul-span">music, </span>
-          <span class="about-bold about-ul-span">and film, </span>
-        </li>
-      </ul>
-    </section>
-    <section id="projects">
 
-    </section>
-  </body>
+    </body>
 
 </html>

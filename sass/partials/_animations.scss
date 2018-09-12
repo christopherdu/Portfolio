@@ -1,12 +1,33 @@
+// Sticky nav animations
+.fixed-nav {
+    opacity: 0;
+    ul {
+
+        .fixed-nav__li::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            bottom: 0px;
+            width: 130%;
+            height: 100%;
+            transition: border-bottom 0.1s ease-in-out
+        }
+
+        .fixed-nav__li:hover::before {
+            border-bottom: 4px solid $logo-color;
+        }
+    }
+}
+
 // Landing page animations
 
 .landing {
 
-    .nav__container__link:hover:before {
+    .nav__container__link:hover::before {
         border-bottom: 4px solid $logo-color;
     }
 
-    .nav__container__link:before {
+    .nav__container__link::before {
         content: "";
         position: absolute;
         left: -10px;
@@ -24,4 +45,40 @@
             cursor: pointer;
         }
     }
+}
+
+// Keyframed animations
+.fixed-nav--hide {
+    animation: fixed-nav-no-opacity 1s linear 0s 1 forwards;
+}
+
+@keyframes fixed-nav-no-opacity {
+    100% {opacity: 0}        
+}
+
+.fixed-nav--show {
+    display: fixed;
+    opacity: 0;
+
+    animation: fixed-nav-opacity 0.5s linear 0s 1 forwards;
+}
+
+@keyframes fixed-nav-opacity {
+    100% {opacity: 1}        
+}
+
+.nav__logo--white {
+    animation: nav__logo-white 0.1s linear 0s 1 forwards;
+}
+
+@keyframes nav__logo-white {
+    100%{background: $base-color; color: $logo-color;};
+}
+
+.nav__logo--green {
+    animation: nav__logo-green 0.1s linear 0s 1 forwards;
+}
+
+@keyframes nav__logo-green {
+    100%{background: $logo-color; color: $base-color;};
 }

@@ -8,10 +8,33 @@
     grid-template-rows: 100vh 100vh 100vh 100vh; 
 }
 
+// Sticky nav 
+.fixed-nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+
+    ul {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 100px 100px 100px;
+        justify-items: end;
+
+        li {
+            padding: 0;
+        }
+
+        li:nth-child(1) {
+            justify-self: start;
+        }
+    }
+}
+
 // Landing grid
 .landing {
     display: grid;
-    grid-template-columns: 35% 30% 35%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 85vh 15vh;
 
     &__scroll {
@@ -23,8 +46,8 @@
 // About grid
 .about {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 // Projects grid
@@ -32,7 +55,7 @@
 // Contact grid
 .contact {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 100vh;
 
 }

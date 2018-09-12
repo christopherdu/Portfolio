@@ -14,14 +14,22 @@
     </head>
 
     <body>
+        <nav class="fixed-nav fixed-nav--hide">
+            <ul>
+                <li class=""><a href="#landing" class="nav__logo" onclick="return false" value="lading">Du</a></li>
+                <li class="fixed-nav__li"><a class="fixed-nav__li__a fixed-nav--active" href="#about" onclick="return false" value="about">About</a></li>
+                <li class="fixed-nav__li"><a class="fixed-nav__li__a" href="#project"  onclick="return false" value="projects">Projects</a></li>
+                <li class="fixed-nav__li"><a class="fixed-nav__li__a" href="#contact" onclick="return false" value="contact">Contact</a></li>
+            </ul>
+        </nav>
         
         <div class="wrapper">
-            <div class='landing'>
+            <div id="landing" class='landing'>
                 <div class="landing__nav">
                     <nav class='landing__nav__container'>
-                        <a class='nav__container__link' href="#">About</a>   
-                        <a class='nav__container__link' href="#">Projects</a>  
-                        <a class='nav__container__link' href="#">Contact</a>   
+                        <a href="#about" onclick="return false"  class='nav__container__link' value="about">About</a>   
+                        <a href="#projects" onclick="return false" class='nav__container__link' value="projects">Projects</a>  
+                        <a href="#contact" onclick="return false" class='nav__container__link' value="contact">Contact</a>   
                     </nav>
                 </div>
                 <div class="landing__logo">
@@ -44,7 +52,7 @@
                 </div>
                 <div class="landing__scroll">Scroll</div>
             </div>
-            <div class='about'>
+            <div id="about" class='about'>
                 <div class="about__top__left">
                     <img class="about__top__left__img" src="https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/canada/British-Columbia/British-Columbia_h_00000201749855.adapt.1900.1.jpg">
                 </div>
@@ -93,8 +101,8 @@
                     </div>
                 </div>
             </div>
-            <div class='projects'></div>
-            <div class='contact'>
+            <div id="projects" class='projects'></div>
+            <div id="contact"class='contact'>
                 <div class="contact__me">
                     <header class="contact__me__header">Want to<br>work together?
                     </header>
@@ -114,6 +122,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- Scripts -->
+        <script src="js/script.js"></script>
 
     </body>
 

@@ -3,6 +3,39 @@ body {
     font-size: 16px;
 }
 
+// Sticky nav 
+.fixed-nav {
+    
+    ul {
+        font-family: $base-font-family;
+        font-weight: $medium;
+
+        li {
+
+            .fixed-nav__li__a {
+                color: $sec-color;
+            }
+            .fixed-nav-li--green {
+                color: $logo-color;
+            }
+
+            .fixed-nav-li--white {
+                color: $base-color;
+            }
+
+            a {
+                
+                text-decoration: none;
+            }
+        }
+
+        .nav__logo {
+            font-weight: $semi-bold;
+            color: $base-color;
+        }
+    }
+}
+
 // Landiing page typography
 .landing {
     font-size: 1em;
@@ -79,8 +112,7 @@ body {
             color: $sec-color;
             font-family: $base-font-family;
             font-weight: $medium;
-            font-size: 2rem;
-            margin-left: 20px;
+            font-size: 1.5rem;
             text-align: left;
         }
     }
@@ -91,11 +123,11 @@ body {
         &__header {
             color: $logo-color;
             font-family: $base-font-family;
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: $semi-bold;
 
             &__sub {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 font-weight: $medium;
             }
         }
@@ -103,7 +135,7 @@ body {
         &__body {
             color: $sec-color;
             font-family: $sec-font-family;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: $medium;
         }
     }   
@@ -112,7 +144,7 @@ body {
     &__bot__right {
         color: $sec-color;
         font-family: $sec-font-family;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: $medium;
     }
 }

@@ -1,63 +1,74 @@
-// Sticky nav animations
+/* CSS Animations and transitions */
+
+/* 
+
+***** Fixed Nav transitions ****  
+
+*/
 .fixed-nav {
     opacity: 0;
     ul {
 
-        .fixed-nav__li::before {
+        .nav__logo {
+            transition: all 0.5s ease-in-out;
+        }
+
+        .fixed-nav__li--def::before {
             content: "";
             position: absolute;
             left: -6px;
             bottom: 0px;
             width: 130%;
             height: 100%;
+            border-bottom: 0px solid $logo-color;
             transition: border-bottom 0.1s ease-in-out
         }
 
-        .fixed-nav__li:hover::before {
+        .fixed-nav__li--def:hover::before {
             border-bottom: 4px solid $logo-color;
         }
-    }
-}
 
-// Landing page animations
+        // When fixed nav is on contact page
+        .fixed-nav__li--alt::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            bottom: 0px;
+            width: 130%;
+            height: 100%;
+            border-bottom: 0px solid $base-color;
+            transition: border-bottom 0.1s ease-in-out
+        }
 
-.landing {
+        .fixed-nav__li--alt:hover::before {
+            border-bottom: 4px solid $base-color;
+        }
 
-    .nav__container__link:hover::before {
-        border-bottom: 4px solid $logo-color;
-    }
-
-    .nav__container__link::before {
-        content: "";
-        position: absolute;
-        left: -10px;
-        bottom: -5px;
-        height: 100%;
-        width: 120%;
-        transition: border-bottom 0.1s ease-in-out;
-    }
-
-    .social__link {
-        transition: color 0.1s ease-in-out;
-
-        &:hover {
-            color: $logo-color;
-            cursor: pointer;
+        // Indicate which page is currently active on fixed nav
+        .fixed-nav__li--active {
+            transition: all 0.2s ease-in-out;
+            font-weight: 800;
         }
     }
 }
 
-// Keyframed animations
+/* 
+
+***** Fixed Nav animations ****  
+
+*/
+// Class used to HIDE fixed nav 
 .fixed-nav--hide {
     animation: fixed-nav-no-opacity 1s linear 0s 1 forwards;
 }
 
 @keyframes fixed-nav-no-opacity {
-    100% {opacity: 0}        
+    100% {opacity: 0; visibility: hidden;}        
 }
 
+// Class used to SHOW fixed nav
 .fixed-nav--show {
-    display: fixed;
+    display: grid;
     opacity: 0;
 
     animation: fixed-nav-opacity 0.5s linear 0s 1 forwards;
@@ -67,18 +78,257 @@
     100% {opacity: 1}        
 }
 
+// Change color of link when reaching projects section
+.fixed-nav__a--logocolor{
+    color: $logo-color !important;
+    transition: color 0.2s ease-in-out;
+}
+
+// Change color of link when reaching projects section
+.fixed-nav__a--basecolor{
+    color: $base-color !important;
+    transition: color 0.2s ease-in-out;
+}
+
+// Change the logo on the fixed nav to WHITE
 .nav__logo--white {
-    animation: nav__logo-white 0.1s linear 0s 1 forwards;
+    animation: nav__logo-white 0.2s ease-in-out 0s 1 forwards;
 }
 
 @keyframes nav__logo-white {
     100%{background: $base-color; color: $logo-color;};
 }
 
+// Change the logo on the fixed nav to GREEN
 .nav__logo--green {
-    animation: nav__logo-green 0.1s linear 0s 1 forwards;
+    animation: nav__logo-green 0.2s ease-in-out 0s 1 forwards;
 }
 
 @keyframes nav__logo-green {
+    0%{background: $base-color; color: $logo-color;}
     100%{background: $logo-color; color: $base-color;};
+}
+
+//  TRANSITIONS
+
+/* 
+
+***** Landing page transitions ****  
+
+*/
+.landing {
+
+    .nav__container__link:hover::after {
+        transition: border-bottom 0.1s ease-in-out;
+        border-bottom: 4px solid $logo-color;
+    }
+
+    .nav__container__link::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -15px;
+        height: 100%;
+        width: 100%;
+        border-bottom: 0px solid $logo-color;
+        transition: border-bottom 0.1s ease-in-out;
+    }
+
+    .social__link {
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: $logo-color;
+            cursor: pointer;
+        }
+    }
+}
+
+/* 
+
+***** Contact page transitions ****  
+
+*/
+.contact {
+
+    // Email 
+    &__me {
+
+        &__email {
+            transition: all 0.2s ease-in-out;    
+        }
+    
+        &__email:hover {
+            background: $sec-color;
+        }
+    }
+    
+    // Social media icons
+    &__social {
+
+        &__icons {
+
+            &__link{ 
+                transition: color 0.2s ease-in-out
+            }
+
+            &__link:hover { 
+                color: $sec-color;
+            }
+        }
+    }
+    
+}
+
+//  ANIMATIONS
+
+/* 
+
+***** Mobile Nav animations ****  
+
+*/
+.mobile-menu-bars--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-bars--hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.mobile-menu--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu--hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* 
+
+***** Landing page animations ****  
+
+*/
+.landing {
+
+    // nav reveal
+    @for $i from 1 through 3 {
+        $delay: 0.2 + ($i * 0.2) + s;
+        .nav--show__#{$i}:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $base-color;
+            animation: landing-nav-ani 0.5s ease-in-out $delay 1 forwards;
+        }
+    }
+
+    // Social media icon transition for opacity on LANDING page
+    @include staggered-show(1, 4, 0.5, 0.5, ".social__link--show__");
+
+    // Logo opacity
+    &__logo__du {
+        opacity: 0;
+        animation: opac-show 1s ease-out 0s 1 forwards;
+    }
+
+    // Information opacity transition
+    &__info {
+        @include staggered-show(1, 2, 0.7, 1, ".info__copy--show__");
+    }
+
+    // Scroll indicator 
+    &__scroll {
+        
+        animation: opac-show 1s ease-out 0.7s 1 forwards;
+
+        &__bar:before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            transform: scaleY(1);
+            background: $base-color;
+            animation: scroll-ani 1.5s ease-in-out 0s infinite forwards;
+        }
+    }
+}
+
+// Keyframes used to do the pan reveal of navigation on landing page
+@keyframes landing-nav-ani {
+    100% {width: 0%;}
+}
+
+// Set opacity to 1 
+@keyframes opac-show {
+    0%  {visibility: hidden; opacitY: 0;}
+    100% {visibility: visible; opacity: 1;}
+}
+
+// // Staggered opacity to 1 on social media icons on landing
+// @keyframes soc-link-show {
+//     100% {visibility: visible; opacity: 1;}
+// }
+
+// Animate scroll bar to indicate scrolling past landing page
+@keyframes scroll-ani {
+    100% {transform: scaleY(0); transform-origin: 0% 100%; height: 85px;}
+}
+
+/* 
+
+***** About page animations ****  
+
+*/
+
+// .about{
+    
+// }
+
+/* 
+
+***** Contact page animations ****  
+
+*/
+.contact {
+
+    // Email contact section
+    &__me {
+
+        &__header--hide {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &__header--show {
+            animation: opac-show 1s ease-in-out 0s 1 forwards;
+
+        }
+
+    &__email--hide {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+    &__email--show {
+        visibility: hidden;
+            opacity: 0;
+            animation: opac-show 0.5s ease-in-out 0.5s 1 forwards;
+        }
+    }
+
+    // Social media section
+    &__social {
+        &__header {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+       //icons
+       @include staggered-show(0, 3, 0.5, 0.5, ".contact__icons__link--show__");
+    }
 }

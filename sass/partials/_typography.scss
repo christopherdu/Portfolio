@@ -8,7 +8,7 @@ body {
     
     ul {
         font-family: $base-font-family;
-        font-weight: $medium;
+        font-weight: $regular;
 
         li {
 
@@ -52,7 +52,7 @@ body {
                 position: relative;
                 z-index: 1;
                 font-size: 1.9rem;
-                margin: 0px 30px 0px 30px;
+                text-align: center;
             }
         }
     }
@@ -96,56 +96,89 @@ body {
 
 // About page typography
 .about {
-    &__top__left {
 
-        &__img {
-            color: $base-color;
-            font-size: 5rem;
+    &__top__right__li {
+
+        i {
+            font-size: 2rem;
         }
-    }
-
-    // Bullet point list
-    &__top__right {
-
-        // li's text styling
-        &__li__text {
-            color: $sec-color;
+        
+        &__text {
             font-family: $base-font-family;
-            font-weight: $medium;
-            font-size: 1.5rem;
-            text-align: left;
+            font-size: 1.2rem;
         }
     }
 
-    // Left paragraph and header + subheader
-    &__bot__left {
+    &__bot {
         
         &__header {
-            color: $logo-color;
-            font-family: $base-font-family;
             font-size: 3rem;
+            font-family: $sec-font-family;
+            color: $logo-color;
             font-weight: $semi-bold;
 
             &__sub {
-                font-size: 1.8rem;
-                font-weight: $medium;
+                font-size: 2rem;
+                font-weight: $regular;
             }
         }
 
         &__body {
-            color: $sec-color;
+            font-size: 1.2rem;
             font-family: $sec-font-family;
-            font-size: 1.3rem;
-            font-weight: $medium;
+            color: $sec-color;
+            font-weight: $regular;
         }
-    }   
+    }
+}
 
-    // Right paragraph
-    &__bot__right {
-        color: $sec-color;
-        font-family: $sec-font-family;
-        font-size: 1.3rem;
-        font-weight: $medium;
+// Project page typography
+.projects {
+
+    &__panel {
+
+        &__header {
+            color: $base-color;
+            font-family: $sec-font-family;
+            text-align: center;
+
+            h1 {
+                color: $logo-color;
+                font-weight: $medium;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                font-weight: $regular;
+            }
+        }
+
+        &__tech {
+            color: $logo-color;
+            font-size: 3rem;
+        }
+
+        &__colours {
+            li {
+                text-align: center;
+                color: transparent;
+            }
+        }
+
+        &__links {
+            
+            a {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__desc {
+            color: rgba($base-color, 0.6);
+            font-family: $base-font-family;
+            font-weight: $regular;
+            text-align: justify;
+            font-size: 1rem;
+        }
     }
 }
 
@@ -167,7 +200,7 @@ body {
             font-family: $base-font-family;
             font-weight: $medium;
             font-size: 2rem;
-
+            text-decoration: none;
         }
     }
 

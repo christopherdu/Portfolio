@@ -1,0 +1,19 @@
+@mixin staggered-show($min, $max, $delay, $dur, $name) {
+    @for $i from $min through $max {
+        $delayFin: $delay + ($i * 0.1) + s; 
+        $durFin: $dur + s;
+        #{$name}#{$i} {
+            animation: opac-show $durFin ease-out $delayFin 1 forwards; 
+        }
+    }
+}
+
+@mixin about-body-show($delay, $dur, $name) {
+    $delayFin: $delay + (1 * 0.1) + s; 
+    $durFin: $dur + s;
+    #{$name} {
+        opacity: 0;
+        visibility: hidden;
+        animation: about-body-show $durFin ease-out $delayFin 1 forwards; 
+    }
+}

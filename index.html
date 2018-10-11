@@ -8,18 +8,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Christopher Du | Web Developer</title>
+        <meta name="description" content="I'm Christopher Du, a web developer based in Toronto, Canada. I specialize in front-end development and use front-end technologies such as SASS, ES6+, CSS grid and flexbox, jQuery, Boostrap, and more. Front-end development is my passion and I'm always striving to imporve my skills.">
+
+        <meta property="og:url"                 content="http://www.christopherdu.com" />
+        <meta property="og:title"               content="Christopher Du | Web Developer" />
+        <meta property="og:description"         content="I'm Christopher Du, a web developer based in Toronto, Canada. I specialize in front-end development and use front-end technologies such as SASS, ES6+, CSS grid and flexbox, jQuery, Boostrap, and more. Front-end development is my passion and I'm always striving to imporve my skills." />
+        <meta property="og:site_name"           content="Christopher Du" />
+        <meta property="og:image"               content="" />
+        <meta property="fb:app_id"              content="000000" />  <!-- Used for Domain Insights -->
+        <meta property="og:type"                content="website" /> <!-- website is deafult -->
+        <meta property="og:locale"              content="en_US" />   <!-- en_US is deafult -->
+
+        <meta name="twitter:card"               content="I'm Christopher Du, a front-end developer based in Toronto.">
+        <meta name="twitter:site"               content="@christopvrdu">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101083738-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-101083738-2');
+        </script>
+
 
     </head>
 
     <body>
         <nav class="fixed-nav fixed-nav--hide">
             <ul>
-                <li class=""><a href="#landing" class="nav__logo" onclick="return false" value="lading">Du</a></li>
-                <li class="fixed-nav__li"><a class="fixed-nav__li__a fixed-nav--active" href="#about" onclick="return false" value="about">About</a></li>
-                <li class="fixed-nav__li"><a class="fixed-nav__li__a" href="#project"  onclick="return false" value="projects">Projects</a></li>
-                <li class="fixed-nav__li"><a class="fixed-nav__li__a" href="#contact" onclick="return false" value="contact">Contact</a></li>
+                <li class="fixed-nav__li__logo"><a href="#landing" class="nav__logo nav__logo--green" onclick="return false" data-name="landing">Du</a></li>
+                <li class="fixed-nav__li fixed-nav__li--def" data-name="about"><a class="fixed-nav__li__a" href="#about" onclick="return false" data-name="about">About</a></li>
+                <li class="fixed-nav__li fixed-nav__li--def" data-name="projects"><a class="fixed-nav__li__a" href="#project"  onclick="return false" data-name="project">Projects</a></li>
+                <li class="fixed-nav__li fixed-nav__li--def" data-name="contact"><a class="fixed-nav__li__a" href="#contact" onclick="return false" data-name="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <i class="fas fa-bars ham-bars mobile-menu-bars--hide "></i>
+        <nav class='mobile-menu mobile-menu--hide'>
+            <ul class="mobile-menu__list">
+                <li><a href="#landing" class="mobile-menu__list__link" onclick='hamburger()'>Home</a></li>
+                <li><a href="#about" class="mobile-menu__list__link" onclick='hamburger()'>About</a></li>
+                <li><a href="#projects" class="mobile-menu__list__link" onclick='hamburger()'>Projects</a></li>
+                <li><a href="#contact" class="mobile-menu__list__link" onclick='hamburger()'>Contact</a></li>
             </ul>
         </nav>
         
@@ -27,93 +70,96 @@
             <div id="landing" class='landing'>
                 <div class="landing__nav">
                     <nav class='landing__nav__container'>
-                        <a href="#about" onclick="return false"  class='nav__container__link' value="about">About</a>   
-                        <a href="#projects" onclick="return false" class='nav__container__link' value="projects">Projects</a>  
-                        <a href="#contact" onclick="return false" class='nav__container__link' value="contact">Contact</a>   
+                        <a href="#about" onclick="return false"  class='nav__container__link nav--show__1' data-name="about">About</a>   
+                        <a href="#project" onclick="return false" class='nav__container__link nav--show__2' data-name="project">Projects</a>  
+                        <a href="#contact" onclick="return false" class='nav__container__link nav--show__3' data-name="contact">Contact</a>   
                     </nav>
                 </div>
                 <div class="landing__logo">
                     <div class="landing__logo__social">
-                        <a class="social__link" href="https://github.com/christopherdu" target="_blank"><i class="fab fa-github"></i></a>
-                        <a class="social__link" href="https://twitter.com/christophvrdu" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="social__link" href="https://codepen.io/cdu11/#" target="_blank"><i class="fab fa-codepen"></i></a>
-                        <a class="social__link"href="https://www.linkedin.com/in/christopher-du-4b4619119/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social__link social__link--show__1" href="https://github.com/christopherdu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="social__link social__link--show__2" href="https://twitter.com/christophvrdu" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="social__link social__link--show__3" href="https://codepen.io/cdu11/#" target="_blank"><i class="fab fa-codepen"></i></a>
+                        <a class="social__link social__link--show__4"href="https://www.linkedin.com/in/christopher-du-4b4619119/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="landing__logo__du">Du</div>
+                    <div class="landing__logo__du logo--show">Du</div>
                 </div>
                 <div class="landing__info">
                     <header 
-                    class="landing__info__header">
+                    class="landing__info__header info__copy--show__1">
                         Hi,<br>I'm Christopher Du 
                     </header>
-                    <p class="landing__info__body">
+                    <p class="landing__info__body info__copy--show__2">
                         I'm a front-end developer based in <br> Toronto
                     </p>
                 </div>
-                <div class="landing__scroll">Scroll</div>
+                <div class="landing__scroll">
+                    Scroll
+                    <div class="landing__scroll__bar"></div>
+                </div>
             </div>
             <div id="about" class='about'>
-                <div class="about__top__left">
-                    <img class="about__top__left__img" src="https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/canada/British-Columbia/British-Columbia_h_00000201749855.adapt.1900.1.jpg">
-                </div>
-                <div class="about__top__right">
-                    <ul class="about__top__right__list">
-                        <li class="about__top__right__li">
-                            <i class="fas fa-user about__top__right__li__icon"></i>
-                            <span class="about__top__right__li__text">Christopher Du</span>
-                        </li>
-                        <li class="about__top__right__li">
-                            <i class="fas fa-calendar-alt about__top__right__li__icon"></i>
-                            <span class="about__top__right__li__text">October 6th 1996</span>
-                        </li>
-                        <li class="about__top__right__li">
-                            <i class="fas fa-briefcase about__top__right__li__icon"></i>
-                            <span class="about__top__right__li__text">Front-end developer</span>
-                        </li>
-                        <li class="about__top__right__li">
-                            <i class="fas fa-graduation-cap about__top__right__li__icon"></i>
-                            <span class="about__top__right__li__text">Senece College</span>
-                        </li>
-                        <li class="about__top__right__li">
-                            <i class="fas fa-map-marker-alt about__top__right__li__icon"></i>
-                            <span class="about__top__right__li__text">Toronto</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="about__bot__left">
-                    <header class="about__bot__left__header">
-                        i'm Christopher Du
-                        <div class="about__bot__left__header__sub">
-                            a front-end developer based in Toronto.
-                        </div>
-                    </header>
-                    <div class="about__bot__left__body">
-                        <br>
-                        I went to Seneca College to study digital media where I found my passion for web development.
-                        I discovered front-end development was what I wanted to pursue through the unique experience offered by it that other programming languages don't offer.
-                        The mixture of creativity and problem solving unique to front-end development is something that I thoroughly enjoy engaging with.
+                <div class="about__top">
+                    <div class="about__top__left">
+                        <img class="about__top__left__img " src="https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/canada/British-Columbia/British-Columbia_h_00000201749855.adapt.1900.1.jpg">
+                    </div>
+                    <div class="about__top__right">
+                        <ul class="about__top__right__list">
+                            <li class="about__top__right__li">
+                                <i class="fas fa-user about__top__right__li__icon"></i>
+                                <span class="about__top__right__li__text">Christopher Du</span>
+                            </li>
+                            <li class="about__top__right__li">
+                                <i class="fas fa-calendar-alt about__top__right__li__icon"></i>
+                                <span class="about__top__right__li__text">October 6th 1996</span>
+                            </li>
+                            <li class="about__top__right__li">
+                                <i class="fas fa-briefcase about__top__right__li__icon"></i>
+                                <span class="about__top__right__li__text">Front-end developer</span>
+                            </li>
+                            <li class="about__top__right__li">
+                                <i class="fas fa-graduation-cap about__top__right__li__icon"></i>
+                                <span class="about__top__right__li__text">Seneca College</span>
+                            </li>
+                            <li class="about__top__right__li">
+                                <i class="fas fa-map-marker-alt about__top__right__li__icon"></i>
+                                <span class="about__top__right__li__text">Toronto</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="about__bot__right">
-                    <div class="about__bot__right__body">
-                        Outside of web development I would consider myself to be an introverted person, usually engaging in hobbies that allow for some alone time.
-                        Some of these hobbies include playing video games, watching and analyzing film. listening to music, ane reading fiction. 
+                <div class="about__bot">
+                    <header class="about__bot__header">
+                            i'm Christopher Du,
+                            <div class="about__bot__header__sub">
+                                a front-end developer based in Toronto.
+                            </div>
+                    </header>
+                    <div class="about__bot__body">
+                        <p>I went to Seneca College to study digital media where I found my passion for web development.
+                        I discovered front-end development was what I wanted to pursue through the unique experience offered by it that other programming languages didn't offer.
+                        The mixture of creativity and problem solving unique to front-end development is something that I thoroughly enjoy engaging with. My ultimate goal as a developer is to be creating products that users enjoy using. Front-end development is such an important aspect of the internet that I want to be fully able to understand it, so I can create things that have some kind of value to someone, somewhere.</p>
+                        <p>Outside of web development I would consider myself to be an introverted person, usually engaging in hobbies that allow for some alone time.
+                        Some of these hobbies include playing video games, watching and analyzing movies, listening to music, and reading fiction. I find the time I get to spend alone refreshes my mind, and puts me in a state of serenity and introspection. It allows me to really take in and absorb everything that's been happening to me prior. Isolation, self reflection, and introspection are things that I value really highly in life. Especially in an age where we're in constant communication, with very few lapses in time where an individual can take time to self reflect.</p> 
                     </div>
                 </div>
             </div>
-            <div id="projects" class='projects'></div>
+            <div id="project" class='projects'>
+                <div class="projects__wrapper">
+                    
+                </div>
+            </div>
             <div id="contact"class='contact'>
                 <div class="contact__me">
-                    <header class="contact__me__header">Want to<br>work together?
+                    <header class="contact__me__header contact__me__header--hide">Want to<br>work together?
                     </header>
-                    <div class="contact__me__email">
+                    <a href="mailto:me@christopherdu.com" class="contact__me__email contact__me__email--hide">
                         me@christopherdu.com
-                    </div>
+                    </a>
                 </div>
                 <div class="contact__social">
-                    <header class="contact__social__header">You can also find me here...</header>
-                    <div class="contact__social__icons">
-                        <a class="contact__social__icons__link"><i class="fab fa-discord"></i></a>
+                    <header class="contact__social__header contact__me__header--hide">You can also find me here...</header>
+                    <div class="contact__social__icons contact__icons__link--hidden">
                         <a class="contact__social__icons__link" href="https://github.com/christopherdu" target="_blank"><i class="fab fa-github"></i></a>
                         <a class="contact__social__icons__link" href="https://twitter.com/christophvrdu" target="_blank"><i class="fab fa-twitter"></i></a>
                         <a class="contact__social__icons__link" href="https://codepen.io/cdu11/#" target="_blank"><i class="fab fa-codepen"></i></a>

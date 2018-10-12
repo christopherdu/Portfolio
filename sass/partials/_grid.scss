@@ -34,19 +34,20 @@
 // Landing grid
 .landing {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-template-rows: 85vh 15vh;
+    justify-items: center;
+    align-items: center;
 
     &__nav {
         display: grid;
-        margin-left: 50px;
         grid-template-columns: 1fr;
+        grid-auto-flow: row;
         justify-content: center;
         align-content: center;
         justify-items: end;
 
         &__container {
-            width: 100%;
             display: grid;
             align-items: center;
             grid-template-columns: 1fr 1fr 1fr;
@@ -54,8 +55,17 @@
         }
     }
 
+    &__info {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        align-items: center;
+    }
+
     &__scroll {
         justify-self: center;
+        align-self: start;
         grid-column-start: 1;
         grid-column-end: 4;
     }
@@ -99,6 +109,13 @@
 
     &__bot {
         grid-column: 1/3; 
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        &__header {
+            justify-self: start;
+        }
 
         &__body {
             display: grid;

@@ -146,7 +146,36 @@
 
 /* 
 
-***** Contact page transitions ****  
+***** About page transitions *****
+
+*/
+
+.about {
+
+    &__top--hide {
+        transform: scaleY(0);
+    }
+
+    &__top--show {
+        transform: scaleY(1);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &__top__cont--hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__top__img--show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+/* 
+
+***** Contact page transitions *****  
 
 */
 .contact {
@@ -182,32 +211,7 @@
 
 //  ANIMATIONS
 
-/* 
-
-***** Mobile Nav animations ****  
-
-*/
-.mobile-menu-bars--show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mobile-menu-bars--hide {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.mobile-menu--show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mobile-menu--hide {
-    visibility: hidden;
-    opacity: 0;
-}
-
-/* 
+/*
 
 ***** Landing page animations ****  
 

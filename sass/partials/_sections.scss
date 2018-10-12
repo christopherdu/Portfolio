@@ -6,53 +6,6 @@ body {
     overflow-x: hidden;
 }
 
-// Mobile menu
-.ham-bars {
-    font-size: 2rem;
-    margin: 15px 0px 0px 15px;
-    color: $logo-color;
-    position: fixed;
-    z-index: 3;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.mobile-menu {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
-    background: $sec-color;
-
-    &__list {
-        width: 100%;
-        height: 100vh;
-        margin: 10px 0px 0px 0px;
-        padding: 0px;
-        z-index: 4;
-        list-style: none;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-
-        &__link {
-            color: $logo-color;
-            text-decoration: none;
-            font-family: $base-font-family;
-            font-size: 3rem;
-        }
-    }
-}
-
-
 // Sticky nav 
 .fixed-nav {
     width: 100%;
@@ -94,11 +47,20 @@ body {
 .landing {
     background-color: $base-color;
 
+    &__nav {
+        margin-left: 1rem;
+
+        &__container {
+            width: 100%;
+        }
+    }
+
     &__logo {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-right: 1rem;
 
         .social__link {
             opacity: 0;
@@ -110,19 +72,7 @@ body {
             background-color: $logo-color;
             padding: 6rem;
         }
-    }
-
-    &__info {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-
-        & * {
-            opacity: 0;
-        }
-    }
+    }   
     
     &__scroll {
         display: flex;
@@ -144,12 +94,15 @@ body {
     background: $base-color;
     min-height: 100vh;
 
+    &__top__left { 
+        border-right: 3px $logo-color solid;
 
-    &__top__left > img {
-        width: 250px;
-        height: 250px;
-        margin-right: 50px;
-        border-radius: 50%;
+        &__img {
+            width: 250px;
+            height: 250px;
+            margin-right: 5rem;
+            border-radius: 50%;
+        }
     }
 
     &__top__right {
@@ -160,19 +113,14 @@ body {
     }
 
     &__bot {
-        margin: 1rem 15rem 0rem 15rem;
-
-        &__body > p {
-            margin: 0.5rem 5rem 0.5rem 0rem;
-        }
     }
 }
 
 // Projects page
 .projects {
     background-color: #0f0f0f;
-    overflow: auto;
     min-height: 100vh;
+    overflow: auto;
 
     &__wrapper {
         width: 100%;
@@ -180,7 +128,7 @@ body {
     }
 
     &__panel {
-        height: 100%;
+        max-height: 100%;
 
         &__header {
             margin: 40px 20px 0px 20px;
@@ -215,7 +163,7 @@ body {
         }
 
         &__desc {
-            margin: 0px 35px 20px 35px;
+            margin: 0rem 2rem 1rem 2rem;
         }
 
         &__links {

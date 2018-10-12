@@ -91,9 +91,10 @@ function toggleActiveSection(dataName) {
     // Intersection Observer API - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
     // Function used as callback for intersection observer
     function sectionIntersect(entries) {
+        console.log(entries);
         entries.forEach((e) => {
             // If the current element we're observing is intersecting
-            if (e.isIntersecting === true) {
+            if (e.intersectionRatio > 0 ) {
                 // Specifically the project section
                 if (e.target === projElem) {
                     // Change the color of the fixed nav links when reaching the threshold
@@ -113,6 +114,7 @@ function toggleActiveSection(dataName) {
                 if (e.target === aboutElem) {
                     toggleC(fixedNavLiArr, 'fixed-nav__a--logocolor', false);
                     toggleActiveSection('about');
+                    console.log("About section pls")
                 }
 
                 //  Contact serction
@@ -135,7 +137,7 @@ function toggleActiveSection(dataName) {
         };
 
         const observer = new IntersectionObserver(sectionIntersect, options);
-        observer.observe(aboutElem);
+        observer.observe(aboutElem); 
         observer.observe(projElem);
         observer.observe(contaElem);
     }

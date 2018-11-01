@@ -72,7 +72,20 @@ body {
             background-color: $logo-color;
             padding: 6rem;
         }
-    }   
+    }
+
+    &__info {
+
+        &__header {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &__body {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
     
     &__scroll {
         display: flex;
@@ -107,12 +120,18 @@ body {
 
     &__top__right {
 
+        &__li {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         &__list {
             list-style: none;
         }
     }
 
     &__bot {
+        margin: 0rem 14rem 0rem 14rem;
     }
 }
 
@@ -128,7 +147,7 @@ body {
     }
 
     &__panel {
-        max-height: 100%;
+        min-height: 100vh;
 
         &__header {
             margin: 40px 20px 0px 20px;
@@ -144,6 +163,7 @@ body {
                 text-align: center;
             }
         }
+
         &__colours {
             width: 100%;
 
@@ -190,7 +210,7 @@ body {
 // Contact page
 .contact {
     background-color: $logo-color;
-    height: auto;
+    min-height: 100vh;
 
     &__me {
         display: flex;

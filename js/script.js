@@ -7,6 +7,23 @@
     true === remove first class, add second
     false === remove second class, add first
 */
+
+function namenam(elem, classes) {
+    if (Array.isArray(elem)) {
+        if (Array.isArray(classes)) {
+            elem.forEach(e => e.classList.replace(classes[0], classes[1]));
+        } else {
+            elem.forEach(e => e.classList.add(classes));
+        }
+    } else if (!Array.isArray(elem)) {
+        if (Array.isArray(classes)) {
+            elem.classList.replace(classes[0], classes[1]);
+        } else {
+            elem.classList.add(classes);
+        }
+    }
+}
+
 function toggleC(elm, cla, sta) {
     if (sta === true) {
         if (typeof cla === 'string') {
@@ -76,7 +93,7 @@ function toggleActiveSection(dataName) {
 
     function createLogoObserver() {
         const options = {
-            root: null, // element that i used as viewport (null = browser)
+            root: null, // element that is used as viewport (null = browser)
             rootMargin: '0px',
             threshold: [0, 0.2], // when 80% of the observe target is visible
         };
@@ -91,10 +108,9 @@ function toggleActiveSection(dataName) {
     // Intersection Observer API - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
     // Function used as callback for intersection observer
     function sectionIntersect(entries) {
-        console.log(entries);
         entries.forEach((e) => {
             // If the current element we're observing is intersecting
-            if (e.intersectionRatio > 0 ) {
+            if (e.intersectionRatio > 0) {
                 // Specifically the project section
                 if (e.target === projElem) {
                     // Change the color of the fixed nav links when reaching the threshold
@@ -114,7 +130,6 @@ function toggleActiveSection(dataName) {
                 if (e.target === aboutElem) {
                     toggleC(fixedNavLiArr, 'fixed-nav__a--logocolor', false);
                     toggleActiveSection('about');
-                    console.log("About section pls")
                 }
 
                 //  Contact serction
@@ -137,12 +152,57 @@ function toggleActiveSection(dataName) {
         };
 
         const observer = new IntersectionObserver(sectionIntersect, options);
-        observer.observe(aboutElem); 
+        observer.observe(aboutElem);
         observer.observe(projElem);
         observer.observe(contaElem);
     }
 
     createSectionObserver();
+
+    function animateIntersect(entries) {
+        const aboutTopLeft = document.querySelector('.about__top__left');
+        const aboutTopLeftImg = document.querySelector('.about__top__left__img');
+        const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));
+        const aboutBot = Array.from(document.querySelectorAll('.about__bot__ani'));
+        const contactMeHeader = document.querySelector('.contact__me__header');
+        const contactMeEmail = document.querySelector('.contact__me__email');
+        const contactSocialHeader = document.querySelector('.contact__social__header');
+        const contactSocialLinks = Array.from(document.querySelectorAll('.contact__social__icons__link'));
+
+        entries.forEach((e) => {
+            if (e.intersectionRatio >= 0.4) {
+                if (e.target === aboutElem) {
+                    toggleC(aboutTopLeft, ['about__top--hide', 'about__top--show'], true);
+                    toggleC(aboutTopLeftImg, ['about__top__img--hide', 'about__top__img--show'], true);
+
+                    aboutTopRightList.forEach((n, i) => toggleC(n, ['about__top__right__li--hide', `about__top__right__li--show__${i}`], true));
+
+                    aboutBot.forEach((n, i) => namenam(n, `about__bot__ani--show__${i}`));
+                } else if (e.target === contaElem) {
+                    toggleC(contactMeHeader, ['contact__me__header--hide', 'contact__me__header--show'], true);
+                    toggleC(contactMeEmail, ['contact__me__email--hide', 'contact__me__email--show'], true);
+
+                    toggleC(contactSocialHeader, ['contact__me__header--hide', 'contact__me__header--show'], true);
+                    contactSocialLinks.forEach((n, i) => toggleC(n, ['contact__icons__link--hidden', `contact__social__icons__link--show__${i}`], true));
+                }
+            }
+        });
+    }
+
+    function createAnimateObserver() {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4,
+        };
+
+        const observer = new IntersectionObserver(animateIntersect, options);
+        observer.observe(aboutElem);
+        observer.observe(projElem);
+        observer.observe(contaElem);
+    }
+
+    createAnimateObserver();
 })();
 
 // Attach scrollIntoView to fixed nav elements

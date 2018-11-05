@@ -240,7 +240,7 @@ function toggleActiveSection(dataName) {
 
     */
     // Disable animation in this case
-    if (window.innerHeight < 800 && window.innerWidth <= 585) {
+    if (window.innerHeight < 800) {
         const aboutTopLeft = document.querySelector('.about__top__left');
         const aboutTopLeftImg = document.querySelector('.about__top__left__img');
         const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));

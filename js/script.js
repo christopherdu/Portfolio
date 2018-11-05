@@ -231,7 +231,7 @@ function toggleActiveSection(dataName) {
 
             // Hide the menu
             toggleC(hamMenu, ['fixed-nav-mobile--show', 'fixed-nav-mobile--hide'], true);
-        }))
+        }));
     }
 })();
 

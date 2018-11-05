@@ -449,6 +449,7 @@ body {
 
 .landing {
   background-color: #fffcf1;
+  max-width: 100vw;
 }
 
 .landing__nav {
@@ -521,6 +522,7 @@ body {
 .about {
   background: #fffcf1;
   min-height: 100vh;
+  max-width: 100vw;
 }
 
 .about__top__left {
@@ -550,6 +552,7 @@ body {
 .projects {
   background-color: #0f0f0f;
   max-height: 100vh;
+  max-width: 100vw;
   overflow: auto;
 }
 
@@ -634,6 +637,7 @@ body {
 .contact {
   background-color: #348c7b;
   min-height: 100vh;
+  max-width: 100vw;
 }
 
 .contact__me {
@@ -1451,7 +1455,7 @@ body {
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 585px) {
   .landing {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1478,8 +1482,75 @@ body {
   .about__bot {
     margin: 1.5rem 2rem 0rem 2rem;
   }
+  .about__bot__header {
+    font-size: 8vw;
+  }
+  .about__bot__header__sub {
+    font-size: 7vw;
+  }
   .about__bot__body {
     margin-top: 2rem;
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .landing__logo {
+    justify-items: center;
+  }
+  .landing__logo__du {
+    padding: 15vw;
+    font-size: 20vw;
+  }
+  .landing__logo__social {
+    display: none;
+  }
+  .about__top {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .about__top__left__img {
+    display: none;
+  }
+  .about__top__right__li__icon {
+    font-size: 2rem !important;
+  }
+  .about__top__right__li__text {
+    font-size: 1.2rem;
+  }
+  .about__bot {
+    margin: 0rem 1.5rem 0rem 1.5rem;
+  }
+  .about__bot__header {
+    font-size: 10vw;
+  }
+  .about__bot__header__sub {
+    font-size: 8vw;
+  }
+  .about__bot__body {
+    margin-top: 5rem;
+    font-size: 5vw;
+  }
+  .contact__me__header {
+    font-size: 9vw;
+  }
+  .contact__me__email {
+    margin: 20px 0px 0px 0px;
+    font-size: 6vw;
+    padding: 4vw;
+  }
+  .contact__social__header {
+    font-size: 8vw;
+    white-space: pre-wrap;
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .contact__social__icons__link {
+    font-size: 10vw;
+    margin: 30px;
   }
 }
 /*# sourceMappingURL=main.css.map */

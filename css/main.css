@@ -1492,9 +1492,13 @@ body {
     margin-top: 2rem;
     font-size: 3.5vw;
   }
+  .contact__social__icons__link {
+    font-size: 9vw;
+    margin: 30px;
+  }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 450px) {
   .landing__logo {
     justify-items: center;
   }
@@ -1547,6 +1551,14 @@ body {
     font-size: 8vw;
     white-space: pre-wrap;
     margin: 0rem 1rem 0rem 1rem;
+  }
+  .contact__social__icons {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
   }
   .contact__social__icons__link {
     font-size: 10vw;

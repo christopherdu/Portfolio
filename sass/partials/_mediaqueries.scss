@@ -365,9 +365,23 @@
             }
         }
     }
+
+    .contact {
+
+        &__social {
+
+            &__icons {
+            }
+
+            &__icons__link {
+                font-size: 9vw;
+                margin: 30px;
+            }
+        }
+    }
 }
 
-@media(max-width: 440px) {
+@media(max-width: 450px) {
     .landing {
 
         &__logo {
@@ -446,6 +460,12 @@
                 font-size: 8vw;
                 white-space: pre-wrap;
                 margin: 0rem 1rem 0rem 1rem;
+            }
+
+            &__icons {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
             }
 
             &__icons__link {

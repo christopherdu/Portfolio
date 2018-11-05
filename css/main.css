@@ -537,8 +537,8 @@ body {
 }
 
 .about__top__right__li {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
 }
 
 .about__top__right__list {

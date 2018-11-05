@@ -233,6 +233,24 @@ function toggleActiveSection(dataName) {
             toggleC(hamMenu, ['fixed-nav-mobile--show', 'fixed-nav-mobile--hide'], true);
         }));
     }
+
+    /*
+
+      Bug when height of the viewport is below 800 IntersectionObserver doesn't work
+
+    */
+    // Disable animation in this case
+    if (window.innerHeight < 800 && window.innerWidth <= 585) {
+        const aboutTopLeft = document.querySelector('.about__top__left');
+        const aboutTopLeftImg = document.querySelector('.about__top__left__img');
+        const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));
+        const aboutBot = Array.from(document.querySelectorAll('.about__bot__ani'));
+        
+        aboutTopLeft.classList.remove('about__top--hide');
+        aboutTopLeftImg.classList.remove('about__top__img--hide');
+        aboutTopRightList.forEach(k => k.classList.remove('about__top__right__li--hide'));
+        aboutBot.forEach(l => l.classList.remove('about__bot__ani'));
+    }
 })();
 
 // Attach scrollIntoView to fixed nav elements

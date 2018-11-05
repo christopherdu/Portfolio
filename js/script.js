@@ -67,7 +67,7 @@ function toggleActiveSection(dataName) {
 
 /*
 
-    Handle events related to scrolling
+    Handle events related to scrolling and clicking
 
 */
 (() => {
@@ -203,6 +203,36 @@ function toggleActiveSection(dataName) {
     }
 
     createAnimateObserver();
+
+    // Hamburger menu
+    if (window.innerWidth <= 900) {
+        const hamButt = document.querySelector('.fixed-nav-mobile__togglebg');
+        const hamIcon = document.querySelector('.fixed-nav-mobile__toggle');
+        const hamMenu = document.querySelector('.fixed-nav-mobile');
+        const hamSelect = Array.from(document.querySelectorAll('.mobile__li__a'));
+
+        hamButt.addEventListener('click', () => {
+            if (hamIcon.classList.contains('fa-bars')) {
+                toggleC(hamIcon, ['fa-bars', 'fa-times'], true);
+            } else if (hamIcon.classList.contains('fa-times')) {
+                toggleC(hamIcon, ['fa-times', 'fa-bars'], true);
+            }
+
+            if (hamMenu.classList.contains('fixed-nav-mobile--hide')) {
+                toggleC(hamMenu, ['fixed-nav-mobile--hide', 'fixed-nav-mobile--show'], true);
+            } else if (hamMenu.classList.contains('fixed-nav-mobile--show')) {
+                toggleC(hamMenu, ['fixed-nav-mobile--show', 'fixed-nav-mobile--hide'], true);
+            }
+        });
+
+        hamSelect.forEach(k => k.addEventListener('click', () => {
+            // Toggle the hamburget icon back to bars
+            toggleC(hamIcon, ['fa-times', 'fa-bars'], true);
+
+            // Hide the menu
+            toggleC(hamMenu, ['fixed-nav-mobile--show', 'fixed-nav-mobile--hide'], true);
+        }))
+    }
 })();
 
 // Attach scrollIntoView to fixed nav elements

@@ -131,14 +131,14 @@ body {
     }
 
     &__bot {
-        margin: 0rem 14rem 0rem 14rem;
+        margin: 7rem 14rem 0rem 14rem;
     }
 }
 
 // Projects page
 .projects {
     background-color: #0f0f0f;
-    min-height: 100vh;
+    max-height: 100vh;
     overflow: auto;
 
     &__wrapper {

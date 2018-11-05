@@ -47,16 +47,39 @@
     </head>
 
     <body>
-        <nav class="fixed-nav fixed-nav--hide">
-            <ul>
-                <li class="fixed-nav__li__logo"><a href="#landing" class="nav__logo nav__logo--green fixed-nav__li__logo__crunch" onclick="return false" data-name="landing">Du</a></li>
-                <li class="fixed-nav__li fixed-nav__li--def" data-name="about"><a class="fixed-nav__li__a" href="#about" onclick="return false" data-name="about">About</a></li>
-                <li class="fixed-nav__li fixed-nav__li--def" data-name="projects"><a class="fixed-nav__li__a" href="#project"  onclick="return false" data-name="project">Projects</a></li>
-                <li class="fixed-nav__li fixed-nav__li--def" data-name="contact"><a class="fixed-nav__li__a" href="#contact" onclick="return false" data-name="contact">Contact</a></li>
-            </ul>
-        </nav>
 
         <div class="wrapper">
+            <!-- Fixed nav for width 900px+ -->
+            <nav class="fixed-nav fixed-nav--hide">
+                <ul>
+                    <li class="fixed-nav__li__logo"><a href="#landing" class="nav__logo nav__logo--green fixed-nav__li__logo__crunch" onclick="return false" data-name="landing">Du</a></li>
+                    <li class="fixed-nav__li fixed-nav__li--def" data-name="about"><a class="fixed-nav__li__a" href="#about" onclick="return false" data-name="about">About</a></li>
+                    <li class="fixed-nav__li fixed-nav__li--def" data-name="projects"><a class="fixed-nav__li__a" href="#project"  onclick="return false" data-name="project">Projects</a></li>
+                    <li class="fixed-nav__li fixed-nav__li--def" data-name="contact"><a class="fixed-nav__li__a" href="#contact" onclick="return false" data-name="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile nav menu -->
+            <div class="fixed-nav-mobile__togglebg">
+                <i class="fas fa-bars fixed-nav-mobile__toggle"></i>
+            </div>
+            <nav class="fixed-nav-mobile fixed-nav-mobile--hide">
+                <ul class="fixed-nav-mobile__container">
+                    <li class="fixed-nav-mobile__li">
+                        <a href="#landing" class="mobile__li__a">Home</a>
+                    </li>
+                    <li class="fixed-nav-mobile__li">
+                        <a href="#about" class="mobile__li__a">About</a>
+                    </li>
+                    <li class="fixed-nav-mobile__li">
+                        <a href="#project" class="mobile__li__a">Projects</a>
+                    </li>
+                    <li class="fixed-nav-mobile__li">
+                        <a href="#contact" class="mobile__li__a">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
             <div id="landing" class='landing'>
                 <div class="landing__nav">
                     <nav class='landing__nav__container'>

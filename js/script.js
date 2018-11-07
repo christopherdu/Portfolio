@@ -75,7 +75,7 @@ function toggleActiveSection(dataName) {
     const logo = document.querySelector('.landing__logo__du');
     const projElem = document.querySelector('#project');
     const contaElem = document.querySelector('#contact');
-    const aboutElem = document.querySelector('#about');
+    const aboutElem = document.querySelector('.about__100');
     const fixedNav = document.querySelector('.fixed-nav');
     const fixedNavLogo = document.querySelector('.nav__logo');
     const fixedNavLiArr = [].concat(...document.querySelectorAll('.fixed-nav__li__a'));
@@ -110,7 +110,7 @@ function toggleActiveSection(dataName) {
     function sectionIntersect(entries) {
         entries.forEach((e) => {
             // If the current element we're observing is intersecting
-            if (e.intersectionRatio > 0) {
+            if (e.intersectionRatio > 0.1) {
                 // Specifically the project section
                 if (e.target === projElem) {
                     // Change the color of the fixed nav links when reaching the threshold
@@ -124,16 +124,10 @@ function toggleActiveSection(dataName) {
 
                     // Add active class to corresponding fixed nav element
                     toggleActiveSection('projects');
-                }
-
-                // About section
-                if (e.target === aboutElem) {
+                } else if (e.target === aboutElem) {
                     toggleC(fixedNavLiArr, 'fixed-nav__a--logocolor', false);
                     toggleActiveSection('about');
-                }
-
-                //  Contact serction
-                if (e.target === contaElem) {
+                } else if (e.target === contaElem) {
                     toggleC(fixedNavLiArr, ['fixed-nav__a--logocolor', 'fixed-nav__a--basecolor'], true);
                     toggleC(fixedNavLi, ['fixed-nav__li--def', 'fixed-nav__li--alt'], true);
                     toggleC(fixedNavLogo, ['nav__logo--green', 'nav__logo--white'], true);
@@ -148,7 +142,7 @@ function toggleActiveSection(dataName) {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: [0.8],
+            threshold: [0.7],
         };
 
         const observer = new IntersectionObserver(sectionIntersect, options);
@@ -245,13 +239,13 @@ function toggleActiveSection(dataName) {
         const aboutTopLeftImg = document.querySelector('.about__top__left__img');
         const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));
         const aboutBot = Array.from(document.querySelectorAll('.about__bot__ani'));
-        
+
         aboutTopLeft.classList.remove('about__top--hide');
         aboutTopLeftImg.classList.remove('about__top__img--hide');
         aboutTopRightList.forEach((k) => {
             k.classList.remove('about__top__right__li--hide');
             k.classList.add('about__top__right__li--show__0');
-    });
+        });
         aboutBot.forEach(l => l.classList.remove('about__bot__ani'));
     }
 })();

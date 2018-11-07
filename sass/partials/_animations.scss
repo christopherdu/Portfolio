@@ -192,7 +192,7 @@
             $delayFin: 0.6 + ($i * 0.1) + s; 
             .about__bot__ani--show__#{$i} {
                 opacity: 1;
-                visibility: 1;
+                visibility: visible;
                 transform: translateY(0rem);
                 transition: all 0.5s ease-in-out $delayFin;
             }
@@ -352,11 +352,5 @@
             transform: scaleY(0);
             transform-origin: 50% 0%;
         }
-    }
-
-    // Social media section
-    &__social {
-
-       //icons
     }
 }

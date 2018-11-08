@@ -521,7 +521,6 @@ body {
 }
 
 .about {
-  position: relative;
   background: #fffcf1;
   min-height: 100vh;
   max-width: 100vw;
@@ -532,6 +531,7 @@ body {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  background: pink;
   width: 100%;
   height: 100vh;
 }
@@ -557,7 +557,7 @@ body {
 }
 
 .about__bot {
-  padding: 7rem 14rem 0rem 14rem;
+  margin: 7rem 14rem 0rem 14rem;
 }
 
 .projects {

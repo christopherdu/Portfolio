@@ -234,20 +234,20 @@ function toggleActiveSection(dataName) {
 
     */
     // Disable animation in this case
-    if (window.innerHeight < 645) {
-        const aboutTopLeft = document.querySelector('.about__top__left');
-        const aboutTopLeftImg = document.querySelector('.about__top__left__img');
-        const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));
-        const aboutBot = Array.from(document.querySelectorAll('.about__bot__ani'));
+    // if (window.innerHeight < 645) {
+    //     const aboutTopLeft = document.querySelector('.about__top__left');
+    //     const aboutTopLeftImg = document.querySelector('.about__top__left__img');
+    //     const aboutTopRightList = Array.from(document.querySelectorAll('.about__top__right__li'));
+    //     const aboutBot = Array.from(document.querySelectorAll('.about__bot__ani'));
 
-        aboutTopLeft.classList.remove('about__top--hide');
-        aboutTopLeftImg.classList.remove('about__top__img--hide');
-        aboutTopRightList.forEach((k) => {
-            k.classList.remove('about__top__right__li--hide');
-            k.classList.add('about__top__right__li--show__0');
-        });
-        aboutBot.forEach(l => l.classList.remove('about__bot__ani'));
-    }
+    //     aboutTopLeft.classList.remove('about__top--hide');
+    //     aboutTopLeftImg.classList.remove('about__top__img--hide');
+    //     aboutTopRightList.forEach((k) => {
+    //         k.classList.remove('about__top__right__li--hide');
+    //         k.classList.add('about__top__right__li--show__0');
+    //     });
+    //     aboutBot.forEach(l => l.classList.remove('about__bot__ani'));
+    // }
 })();
 
 // Attach scrollIntoView to fixed nav elements

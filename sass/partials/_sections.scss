@@ -112,10 +112,9 @@ body {
 
     &__100 {
         position: absolute;
-        align-self: end;
-        background: pink;
+        align-self: center;
         width: 100%;
-        height: 100vh;
+        height: 120vh;
     }
 
     &__top__left { 
@@ -149,13 +148,13 @@ body {
 // Projects page
 .projects {
     background-color: #0f0f0f;
+    overflow: scroll;
     max-height: 100vh;
     max-width: 100vw;
 
     &__wrapper {
         width: 100%;
         min-height: 100vh;
-        overflow:scroll;
     }
 
     &__panel {
